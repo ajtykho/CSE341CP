@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+
+    <form class="product-form" action="/team/ta02/addUser" method="POST">
+      <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+      </div>
+
+      <button class="btn btn-success" type="submit">Add User</button>
+  </form>
+
+    <% if (users.length > 0) { %>
+      
+    <div class="for-loop container">
+
+    </div>
+    <% users.forEach(user => {%>
+        <p><%= user %></p> <%
+      });
+    } 
+    else { %>
+      <h2 style="margin: 2rem 0">No Users Found!</h2>
+  <% } %>
+    <div >
+      <form class="product-form" action="ta02/removeUser" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="removeName" id="removeName">
+        </div>
+
+        <button class="btn btn-danger" type="submit">Delete User</button>
+    </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  
+</div>
+
+
+</body>
+</html>

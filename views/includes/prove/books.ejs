@@ -1,0 +1,36 @@
+<% if (bookList.length > 0) { %>
+      
+    <div class="grid">
+        <% bookList.forEach(book => {%>
+            <article class="card product-item">
+                <header class="card__header">
+                    <h1 class="product__title"><%= book.title %></h1>
+                </header>
+                <div class="card__image">
+                    <img src="<%= book.imageUrl %>" <%# https://picsum.photos/200/300 %>
+                        alt="Book Image">
+                </div>
+                <div class="card__content">
+                    <h2 class="book__Author"><%= book.author %></h2>
+                    <p class="book__description"><%=book.bookSum%></p>
+                </div>
+
+                <form class="product-form" action="/prove/week02/removeBook" method="POST">
+                        <input value="<%= book.title %>" type="hidden" name="removeBook" id="removeBook">
+                    <div class="card__actions">
+                        <button class="btn">Delete Book</button>
+                    </div>
+                    </form>
+                
+            </article>
+            <%
+        });
+      } 
+      else { %>
+      <h2 style="margin: 2rem 0">No Books Found!</h2>
+  <% } %>
+    </div>
+
+  
+
+  <button style="margin: 2rem" class="btn btn-success" type="submit" ><a href="/prove/week02">Back</a></button>

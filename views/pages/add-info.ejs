@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title><%=title%></title>
+</head>
+
+<body>
+  
+<div class="jumbotron text-center">
+  <div class="container">
+      <form action="/prove/week01/add-info" method="POST">
+        <p>First name</p><input  type="text" name="firstName">
+        <p>Last name</p><input  type="text" name="lastName">
+        <p>Email</p><input  type="text" name="email">
+        <p>Phone Number</p><input  type="text" name="number">
+        <p>Address</p><input  type="text" name="address">
+        <button type="submit" class="btn btn-lg btn-success">Add My Info</button>
+      </form>
+
+  </div>
+</div>
+
+</body>
+</html>
