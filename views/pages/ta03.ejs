@@ -2,6 +2,8 @@
 <html>
 <head>
   <% include ../includes/header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/product.css" />
+  
 </head>
 
 <body>
@@ -9,7 +11,35 @@
 <div class="jumbotron text-center">
   <div class="container">
     <h1><%= title %></h1>
-    <p>This is the placeholder for Team Activity 03</p>
+    <div>
+      <form class="product-form" action="/team/ta03/searchedProducts" method="POST">
+        <div>
+            <label for="name">Search Product Name: </label>
+            <input type="text" name="search" id="search" style="color:black">
+        </div>
+  
+        <button class="btn btn-success" type="submit">Search</button>
+    </form>
+    </div>
+        <% for(var i=0; i<items.length; i++) {%>
+        <% if(i%3==0) {%>
+          <div>
+        <%}%>
+        <div class="card">
+          <h3><%= items[i].name %></h3>
+          <img src="<%= items[i].imageUrl %>" class="image">
+          <div>
+            <h2><%= items[i].price %></h2>
+            <p class="caption"><%= items[i].description %></p>
+  
+          </div>
+        </div>
+      <%}%> 
+      <% if(i%3==2) {%>
+          </div>
+        <br>
+      <%}%>
+    
   </div>
 </div>
 <div class="container">
