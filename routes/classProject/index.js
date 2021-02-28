@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 
 const project = express();
 
-router.use('admin', require('./admin'));
-router.use('shop', require('./shop'));
+router.use('/admin', require('./admin'));
+router.use('/shop', require('./shop'));
 
 
 module.exports = router;

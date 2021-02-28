@@ -8,7 +8,8 @@ const project = express();
 router
   .use('/prove', require('./prove'))
   .use('/team', require('./team'))
-
+  .use('/classProject', require('./classProject'))
+  
   .get('/', (req, res, next) => {
     // This is the primary index, always handled last. 
     res.render('pages/index', {title: 'Welcome to my CSE341 repo', path: '/'});
